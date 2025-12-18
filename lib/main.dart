@@ -1,3 +1,4 @@
+//Robert
 import 'package:flutter/material.dart';
 
 void main() {
@@ -33,47 +34,36 @@ class _myAppState extends State<myApp> {
           ),
         ),
 
-        body:
-            SizedBox(
-              width: double.infinity,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Text(
-                    "*",
-                    style: TextStyle(
-                        fontSize: 60,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold
+        body: Center(
+          child: Column(
+            children: [
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 30),
+                child: Text(
+                  "what is ur name? ",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 36,
+                    fontWeight: FontWeight.bold
+
+                  ),
+                ),
+              ),
+              for (var i in List.generate(5, (index) => index + 1))
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 8),
+                  child: SizedBox(
+                    width: 200,
+                    height: 40,
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      child: Text("Answer $i"),
                     ),
                   ),
-                  Text(
-                    "*",
-                    style: TextStyle(
-                        fontSize: 60,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold
-                    ),
-                  )
-                ],
-              ),
-            )
-            // Padding(
-            //   padding: EdgeInsets.zero,
-            //   child:
-            //   Text(
-            //     "what is ur name? ",
-            //     style: TextStyle(
-            //       color: Colors.white,
-            //       fontSize: 25,
-            //       fontWeight: FontWeight.bold,
-            //     ),
-            //   ),
-            // ),
-            // for (int i in List.generate(5, (index) => index + 1))
-            //   ElevatedButton(onPressed: () {}, child: Text("Answer $i")),
-
-
+                ),
+            ],
+          ),
+        ),
       ),
     );
   }
